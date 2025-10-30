@@ -1,15 +1,14 @@
 function stringChop(str, size) {
   // your code here
+	if(str === null) return [];
+	
 	let n = str.length;
-	let start = 0;
-	let end = size;
+	size = Number(size);
 	let arr = [];
 
-	for(let i = 0; i < Math.ceil(n/size); i++){
-		let chunk = str.slice(start, end);
+	for(let i = 0; i < n; i += size){
+		let chunk = str.slice(i, i+size);
 		arr.push(chunk);
-		start += size;
-		end += size;
 	}
 	return arr;
 }
